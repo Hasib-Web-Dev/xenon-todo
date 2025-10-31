@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xenon To-Do</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="sparkleCanvas"></canvas>
+
+  <div class="page">
+    <div class="container">
+      <header class="header">
+        <div class="brand"><div class="logo"></div> <span>Xenon To-Do</span></div>
+        <div id="authArea" class="stack"></div>
+      </header>
+
+      <!-- AUTH VIEW -->
+      <section id="authView" class="panel" style="display:none">
+        <h2>Welcome! Sign in to your To-Do</h2>
+        <p class="muted">Demo-only authentication stored in your browser. No servers. ❤</p>
+
+        <div class="auth-grid">
+          <form id="signInForm" class="panel">
+            <h3>Sign In</h3>
+            <div class="stack column">
+              <input class="input" name="username" placeholder="Username" required />
+              <input class="input" name="password" placeholder="Password" type="password" required />
+              <button class="btn" type="submit">Sign In</button>
+            </div>
+          </form>
+
+          <form id="signUpForm" class="panel">
+            <h3>Create Account</h3>
+            <div class="stack column">
+              <input class="input" name="username" placeholder="Choose a username" required />
+              <input class="input" name="password" placeholder="Choose a password" type="password" required />
+              <button class="btn secondary" type="submit">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- APP VIEW -->
+      <section id="appView" style="display:none">
+        <div class="todo-wrap">
+          <div class="left-panel">
+            <div class="panel">
+              <div class="list-header">
+                <h2>My Tasks</h2>
+                <div class="filters">
+                  <span class="chip" data-filter="all" data-active="true">All</span>
+                  <span class="chip" data-filter="active">Active</span>
+                  <span class="chip" data-filter="done">Done</span>
+                </div>
+              </div>
+
+              <!-- Inputs: title + name + due -->
+              <div class="todo-input-wrap">
+                <input id="newTaskInput" class="input" placeholder="Task title…" />
+                <input id="nameInput" class="input" placeholder="Name (who)" />
+                <input id="dueInput" class="input" type="datetime-local" />
+                <button id="addTaskBtn" class="btn">Add</button>
+              </div>
+
+              <div id="todoList" style="margin-top:12px"></div>
+
+              <div class="divider"></div>
+              <div class="stack space-between">
+                <button id="clearDoneBtn" class="btn ghost">Clear Completed</button>
+                <span id="countLabel" class="muted">0 items</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-panel">
+            <div class="panel">
+              <h3>Tips ✨</h3>
+              <ul>
+                <li>Double-click a task’s title to edit.</li>
+                <li>Press <b>Enter</b> to save, <b>Esc</b> to cancel.</li>
+                <li>Mouse move korle background-e <b>jikimiki</b> sparkle dekhbe! 🧚‍♀️</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">Built By Hasibul Alam.</div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
